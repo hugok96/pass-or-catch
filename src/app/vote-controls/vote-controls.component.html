@@ -1,0 +1,9 @@
+<div id="vote-controls">
+  <button class="vote-controls-dislike" (click)="dislike()" *ngIf="!gameOver">
+    <fa-icon [icon]="faDislike"></fa-icon>
+  </button>
+  <button class="vote-controls-like" (click)="like()" *ngIf="!gameOver">
+    <fa-icon [icon]="faLike"></fa-icon>
+  </button>
+  <button class="vote-controls-restart" *ngIf="gameOver" (click)="restart()">restart</button>
+</div>

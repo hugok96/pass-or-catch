@@ -1,0 +1,6 @@
+<div id="matches">
+  <div *ngFor="let pokemon of matchedPokemon">
+    <img [src]="pokemon.sprites.other['official-artwork'].front_default">
+    <span>{{ pokemon.name }}</span>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div id="menu">
+  <div id="logo">
+    <small>pokémon</small>
+    <br>
+    pass or catch
+  </div>
+  <button (click)="openMatches()" id="open-matches">
+    <fa-icon [icon]="matchesIcon"></fa-icon>
+  </button>
+</div>
+
+<app-matches *ngIf="matchesOpened"></app-matches>

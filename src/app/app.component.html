@@ -1,0 +1,21 @@
+<app-menu></app-menu>
+<div id="running-stats">
+  <span>catches: {{ likes }}</span>
+  <span>passes: {{ dislikes }}</span>
+</div>
+<div id="card-wrapper">
+  <app-vote-card *ngFor="let cardData of voteCards" [cardData]="cardData"></app-vote-card>
+  <div id="game-over" *ngIf="gameOver">
+    <h1>Game over!</h1>
+    <br>
+    <b>Catches: {{ likes }}</b>
+    <b>Passes: {{ dislikes }}</b>
+    <br>
+    <b>Average height: {{ height * 10 | number: '1.0-0' }}cm</b>
+    <b>Average weight: {{ weight / 10 | number: '1.0-0' }}kg</b>
+    <br>
+    <b>Favourite primary type: {{ primaryType }}</b>
+    <b>Favourite seconary type: {{ secondaryType }}</b>
+  </div>
+</div>
+<app-vote-controls></app-vote-controls>

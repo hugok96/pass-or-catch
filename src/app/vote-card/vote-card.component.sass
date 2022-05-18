@@ -1,0 +1,104 @@
+.vote-card
+  display: flex
+  flex-direction: column
+  width: 25rem
+  margin: auto
+  padding: 0.5rem 0.5rem 1rem
+  overflow: hidden
+  background: white
+  border: 1px solid #dcdcdc
+  border-radius: 0.5rem
+  height: 35rem
+  transition: transform .5s, opacity .4s
+  position: absolute
+  left: 0
+  right: 0
+
+  &[data-verdict="liked"]
+    transform-origin: 100% 100%
+    transform: rotateZ(40deg) translate(11rem, -3rem)
+    opacity: 0
+
+  &[data-verdict="disliked"]
+    transform-origin: 0 100%
+    transform: rotateZ(-40deg) translate(-11rem)
+    opacity: 0
+
+  .vote-card-images
+    border: 1px solid #f1f1f1
+    border-radius: 0.5rem
+    display: flex
+    position: relative
+    overflow: hidden
+    flex-grow: 1
+
+    .vote-card-overlay
+      display: flex
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+
+      div
+        width: 50%
+
+    .vote-card-images-index
+      position: absolute
+      left: 0
+      right: 0
+      top: 0.5rem
+      display: flex
+
+      div
+        background: rgba(112, 112, 112, 0.2)
+        height: 0.2rem
+        margin: 0 0.6rem
+        flex-grow: 1
+        border-radius: 1rem
+
+        &[data-active="true"]
+          background: rgba(112, 112, 112, 0.4)
+
+    img
+      width: 100%
+      min-width: 100%
+      height: 100%
+      object-fit: contain
+      transition: margin-left 0.5s
+
+    img::before
+      content: 'aaaa'
+
+    &[data-index="1"]
+      img:first-of-type
+        margin-left: -100%
+
+    &[data-index="2"]
+      img:first-of-type
+        margin-left: -200%
+
+    &[data-index="3"]
+      img:first-of-type
+        margin-left: -300%
+
+    &[data-index="4"]
+      img:first-of-type
+        margin-left: -400%
+
+  .vote-card-details
+    h1
+      margin: 0
+      text-transform: capitalize
+
+      small
+        font-size: 1.3rem
+        opacity: 0.7
+
+    .vote-card-details-row
+      color: rgba(0, 0, 0, 0.5)
+
+      fa-icon, i
+        width: 1.8rem
+        display: inline-block
+        text-align: center

@@ -1,0 +1,27 @@
+<div class="vote-card" [attr.data-verdict]="verdict" [ngStyle]="{'z-index': zIndex}">
+  <div class="vote-card-images" [attr.data-index]="index">
+    <div class="vote-card-overlay">
+      <div (click)="moveImages(-1)"></div>
+      <div (click)="moveImages(1)"></div>
+    </div>
+    <div class="vote-card-images-index">
+      <div *ngFor="let src of images; let i = index" [attr.data-active]="+i == index"></div>
+    </div>
+    <img *ngFor="let src of images" [src]="src">
+  </div>
+  <div class="vote-card-details">
+    <h1>{{ pokemon.name }}<small>, {{ pokemon.id }}</small></h1>
+    <div class="vote-card-details-row">
+      <fa-icon [icon]="faTypes"></fa-icon>
+      <span>{{ pTypes }}</span>
+    </div>
+    <div class="vote-card-details-row">
+      <fa-icon [icon]="faAbilities"></fa-icon>
+      <span>{{ pAbilities}}</span>
+    </div>
+    <div class="vote-card-details-row">
+      <fa-icon [icon]="faWeight"></fa-icon>
+      <span>{{ pokemon.weight / 10 }}kg, {{ pokemon.height * 10}}cm</span>
+    </div>
+  </div>
+</div>
